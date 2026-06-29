@@ -3,25 +3,28 @@ import ProductCard from "../components/ProductCard";
 const products = [
   {
     id: 1,
-    name: "Premium Hantu",
-    price: "5000",
-    image:
-      "https://images.unsplash.com/photo-1502741338009-cac2772e18bc"
+    name: "Complete Qur'an",
+    price: "9000",
+    image: "/images/products/Complete Qur'an.jpg",
   },
   {
     id: 2,
-    name: "Classic Hantu",
-    price: "3500",
-    image:
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+    name: "Qursiy-Kabeer",
+    price: "2500",
+    image: "/images/products/Qursiy-Kabeer.jpg",
   },
   {
     id: 3,
-    name: "Special Hantu",
-    price: "7000",
-    image:
-      "https://images.unsplash.com/photo-1490645935967-10de6ba17061"
-  }
+    name: "Seffi & Mugni",
+    price: "450",
+    image: "/images/products/Seffi & Mugni.jpg",
+  },
+  {
+    id: 4,
+    name: "Suratul-Kahf",
+    price: "300",
+    image: "/images/products/Suratul-Kahf.jpg",
+  },
 ];
 
 function Shop() {

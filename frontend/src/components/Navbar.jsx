@@ -11,9 +11,26 @@ function Navbar() {
 
         <div className="flex justify-between items-center">
 
-          <h1 className="font-bold text-2xl">
-            CAHS - Cisse AlHaqqu Hantu Services
-          </h1>
+          <Link
+  to="/"
+  className="flex items-center gap-3"
+>
+  <img
+    src="/logo/cahs-logo.png"
+    alt="CAHS Logo"
+    className="h-12 w-12 rounded-full object-cover bg-white p-1"
+  />
+
+  <div>
+    <h1 className="font-bold text-xl leading-tight">
+      CAHS
+    </h1>
+
+    <p className="text-xs text-green-100">
+      Cisse AlHaqqu Hantu Services
+    </p>
+  </div>
+</Link>
 
           <div className="hidden md:flex items-center gap-6">
             <Link to="/">Home</Link>

@@ -5,7 +5,7 @@ function ProductCard({ product }) {
       <img
         src={product.image}
         alt={product.name}
-        className="h-56 w-full object-cover"
+        className="h-56 w-full object-cover transition-transform duration-300 hover:scale-105"
       />
 
       <div className="p-4">
