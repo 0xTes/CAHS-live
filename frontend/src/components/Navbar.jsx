@@ -16,7 +16,7 @@ function Navbar() {
   className="flex items-center gap-3"
 >
   <img
-    src="/logo/cahs-logo.png"
+    src="/logo/cahs-logo.jpg"
     alt="CAHS Logo"
     className="h-12 w-12 rounded-full object-cover bg-white p-1"
   />

@@ -44,15 +44,15 @@ function Home() {
         <div className="grid md:grid-cols-3 gap-8">
 
           <div className="shadow-lg rounded-xl p-6">
-            Premium Hantu
+            Qursiy-Kabeer
           </div>
 
           <div className="shadow-lg rounded-xl p-6">
-            Classic Hantu
+            Suratul Yasin
           </div>
 
           <div className="shadow-lg rounded-xl p-6">
-            Special Hantu
+            Adhkar For Protection
           </div>
 
         </div>
