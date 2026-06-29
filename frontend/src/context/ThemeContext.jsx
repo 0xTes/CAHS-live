@@ -1,11 +1,18 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useState } from "react";
 
-const ThemeContext = createContext();
+const ThemeContext = createContext(null); // ✅ Fix 3: explicit null default
 
 export function ThemeProvider({ children }) {
   const [darkMode, setDarkMode] = useState(() => {
+    // ✅ Fix 2: guard against SSR / environments without localStorage
+    if (typeof window === "undefined") return false;
     return localStorage.getItem("theme") === "dark";
   });
+
+  // ✅ Fix 1: stable toggle function so consumers don't need setDarkMode internals
+  const toggleDarkMode = useCallback(() => {
+    setDarkMode((prev) => !prev);
+  }, []);
 
   useEffect(() => {
     if (darkMode) {
@@ -18,15 +25,17 @@ export function ThemeProvider({ children }) {
   }, [darkMode]);
 
   return (
-    <ThemeContext.Provider
-      value={{
-        darkMode,
-        setDarkMode,
-      }}
-    >
+    <ThemeContext.Provider value={{ darkMode, setDarkMode, toggleDarkMode }}>
       {children}
     </ThemeContext.Provider>
   );
 }
 
-export const useTheme = () => useContext(ThemeContext);
+// ✅ Fix 3: guard prevents silent undefined bugs when used outside provider
+export const useTheme = () => {
+  const context = useContext(ThemeContext);
+  if (context === null) {
+    throw new Error("useTheme must be used within a ThemeProvider");
+  }
+  return context;
+};
