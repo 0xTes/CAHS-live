@@ -56,10 +56,15 @@ const productSchema = new mongoose.Schema(
       default: false,
     },
 
-    active: {
-      type: Boolean,
-      default: true,
-    },
+    availability: {
+    type: String,
+    enum: [
+        "in_stock",
+        "out_of_stock",
+        "preorder"
+    ],
+    default: "in_stock"
+}
   },
   {
     timestamps: true,
